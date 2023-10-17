@@ -15,10 +15,41 @@
   font-size: clamp(40%, 1% + 2vw, 62.5%);
 }
 
+/* Quando o JS colocar a classe light na tag html ele ira utilizar esse padrão de cores */
 html.light{
   --text-color: hsl(var(--hue), 5%, 7%);
   --bg-color: hsl(var(--hue), 40%, 98%);
   --controls-bg-color: hsl(var(--hue), 0%, 14%);
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon{
+  display: none;
+}
+
+#toggle-mode{
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+  font-size: 3.2rem;
+
+  line-height: 0;
+  color: var(--text-color);
+}
+
+/* Classe para sumir com o texto de alguma coisa na tela mas o texto continua para os leitores de tela */
+.sr-only{
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  /* Não ter rolagem para a leitura */
+  overflow: hidden;
+
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  /* Retirando qualquer aparencia que o navegador possa colocar no elemento */
+  appearance: none;
 }
 
 body{

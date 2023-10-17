@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="light">
+<html lang="pt-br" class="">
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,15 +16,20 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   
+  <!-- a tag defer faz com que o script seja carregado depois que todo o html ja foi carregado -->
+  <!-- a tag type module faz com que seja carregado ES6 ativando o import e o export -->
+  <script type="module" src="src/main.js" defer></script>
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
 </head>
 <body>
-  <!-- <div id="app">
-    <button id="toggle-mode">Ativar/desativar DarkMode
+   <div id="app">
+    <button id="toggle-mode"> 
+      <!-- Com essa classe sr-only o texto continua na tela para os leitores porem não visível -->
+      <span class="sr-only">Ativar Light Mode</span>
       <i class="ph-bold ph-sun"></i>
       <i class="ph-bold ph-moon"></i>
-    </button> -->
+    </button>
 
     <section id="timer" class="flex">
       <span id="minutes">00</span>
@@ -33,12 +38,29 @@
     </section>
 
     <section id="controls" class="flex">
-      <button class="ph ph-play-circle"></button>
-      <button class="ph ph-pause-circle"></button>
-      <button class="ph ph-timer secondary"></button>
-      <button class="ph ph-stop-circle secondary"></button>
-      <button class="ph ph-speaker-none secondary"></button>
-      <button class="ph ph-speaker-high"></button>
+      <button class="ph ph-play-circle">
+        <span class="sr-only">Iniciar Contador</span>
+      </button>
+
+      <button class="ph ph-pause-circle">
+        <span class="sr-only">Pausar Contador</span>
+      </button>
+
+      <button class="ph ph-timer secondary">
+        <span class="sr-only">Ajustar Contador</span>
+      </button>
+
+      <button class="ph ph-stop-circle secondary">
+        <span class="sr-only">Reiniciar Contador</span>
+      </button>
+
+      <button class="ph ph-speaker-none secondary">
+        <span class="sr-only">Iniciar Música</span>
+      </button>
+
+      <button class="ph ph-speaker-high">
+        <span class="sr-only">Parar Música</span>
+      </button>
     </section>
 
   </div>
