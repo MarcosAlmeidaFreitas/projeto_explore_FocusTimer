@@ -37,7 +37,7 @@ html:not(.light) .ph-moon{
   color: var(--text-color);
 }
 
-/* Classe para sumir com o texto de alguma coisa na tela mas o texto continua para os leitores de tela */
+/* Classe para sumir com o texto ou um objeto de alguma coisa na tela mas o texto continua para os leitores de tela */
 .sr-only{
   width: 1px;
   height: 1px;
