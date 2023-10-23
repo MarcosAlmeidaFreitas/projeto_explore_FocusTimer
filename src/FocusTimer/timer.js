@@ -13,5 +13,11 @@ export function updateDisplay(minutes, seconds){
 }
 
 export function countDown(){
-  console.log('inciou');
+  if(!state.isRunning){
+    return
+  }
+  
+  
+
+  setTimeout(() => countDown(), 1000);
 }
