@@ -1,5 +1,7 @@
 import { controls } from "./elements.js";
 import * as actions from './actions.js';
+import * as el from './elements.js';
+
 
 export function registerControls(){
   controls.addEventListener('click', (event) =>{
@@ -11,8 +13,17 @@ export function registerControls(){
     }else{
       // caso for uma função execute a função que o usuario deseja
       actions[action]();
+      console.log(actions[action]) 
     }
 
-    
-  })
+  });
+}
+
+export function setMinutes(){
+  el.minutes.addEventListener('focus', () => {
+    el.minutes.textContent('');
+  });
+
+  // Fazendo com que seja 'ouvida' a teclas, e com essa expressão regular o campo só vai aceitar numeros '
+  el.minutes.onkeypress = (event) => /\d/.test(event.key);
 }
